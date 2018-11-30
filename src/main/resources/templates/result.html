@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Result</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link type="text/css" href="css/main.css" rel="stylesheet" />
+</head>
+<body>
+	<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="section-header">
+				<span class="content-header wow fadeIn " data-wow-delay="0.2s"
+					data-wow-duration="2s">Employee Details</span>
+				</h1>
+			</div>
+			<div id="no-more-tables">
+				<table
+					class="col-md-12 table-bordered table-striped table-condensed cf">
+					<thead class="cf">
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Country</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td th:style="${'color: black;'}" data-title="firstname"><p th:text="${firstName}" /></td>
+							<td th:style="${'color: black;'}" data-title="lastname"><p th:text="${lastName}" /></td>
+							<td th:style="${'color: black;'}" data-title="country"><p th:text="${country}" /></td>
+							<td th:style="${'color: black;'}" data-title="date"><p th:text="${date}" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<br/>
+			<br/>
+			<h3 class="section-header">
+				<span class="content-header wow fadeIn " data-wow-delay="0.2s"
+					data-wow-duration="2s"><p th:text="${firstName + ' CV'}" /></span>
+			</h3>
+			<embed th:src="${cv}" width="1170px" height="5000px" />
+		</div>
+	</div>
+	</section>
+</body>
+</html>

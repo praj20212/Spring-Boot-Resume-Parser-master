@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Index page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link type="text/css" href="css/main.css" rel="stylesheet" />
+</head>
+<body>
+<form th:action="@{/}" th:object="${employee}" method="post"
+					enctype="multipart/form-data">
+	<section id="contact">
+		<div class="section-content">
+			<h1 class="section-header">
+				<span class="content-header wow fadeIn " data-wow-delay="0.2s"
+					data-wow-duration="2s">Job Application</span>
+			</h1>
+			<h3>Candidate Details</h3>
+		</div>
+
+		<div class="contact-section">
+			<div class="container">
+					<div class="col-md-6 form-line">
+						<div class="form-group">
+							<label for="firstName">First Name</label> <input type="text" class="form-control"
+								th:field="*{firstName}" placeholder=" Enter First Name" />
+						</div>
+						<div class="form-group">
+							<label for="lastName">Last Name</label> <input type="text"
+								class="form-control" th:field="*{lastName}"
+								placeholder=" Enter Last Name" />
+						</div>
+						<div class="form-group">
+							<label for="country">Country</label> 
+							<select class="form-control" th:field="*{country}">
+								<option th:value="'USA'" th:text="USA"></option>
+								<option th:value="'Germany'" th:text="Germany"></option>
+								<option th:value="'UK'" th:text="UK"></option>
+								<option th:value="'Japan'" th:text="Japan"></option>
+								<option th:value="'Sweden'" th:text="Sweden"></option>
+								<option th:value="'Australia'" th:text="Australia"></option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="date">Date</label> <input type="datetime-local" class="form-control"
+								th:field="*{date}" placeholder=" Enter Date" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="form-group files">
+								<label>Upload Your File</label> <input type="file" name="cvFile" 
+									class="form-control" multiple="" />
+							</div>
+						</div>
+						<div>
+
+							<button type="submit" class="btn btn-default submit">
+								<i class="fa fa-paper-plane" aria-hidden="true"></i> Submit
+							</button>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+	</form>
+</body>
+</html>
